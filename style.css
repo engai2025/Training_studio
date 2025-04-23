@@ -107,66 +107,100 @@ span{
     width: 100%;
     background-color: orange;
 }
-.hero{
+.hero {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh; /* Full viewport height */
-    position: relative;
-    overflow: hidden; /* Hide video overflow */
-    text-align: center;
-    color: white;
-    /* background: rgba(117, 117, 138, 0.8); */
-    background: linear-gradient(rgba(14, 13, 13, 0.7), rgba(51, 62, 110, 0.7));
-
+  justify-content: center;
+  align-items: center;
+  height: 90vh; 
+  position: relative;
+  overflow: hidden; 
+  text-align: center;
+  color: white;
+  background: linear-gradient(rgba(14, 13, 13, 0.7), rgba(51, 62, 110, 0.7));
 }
- 
 
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2; 
+  transform: translate(-50%, -50%);
+}
 
-  .video-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -2; /* Behind the overlay */
-    transform: translate(-50%, -50%);
+.hero .content h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
-.hero .content h3{
-   font-size: 1.5rem;
-   text-transform: uppercase;
 
+.hero .content h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
 }
-.hero .content h1{
-    font-size: 6rem;
-    text-transform: uppercase;
+
+.content button {
+  background-color: orangered;
+  color: white;
+  padding: 20px 36px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  cursor: pointer;
 }
-.content button{
-      background-color: orangered;
-      color: white;
-      padding: 20px 36px;
-      border: none;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      font-weight: bolder;
-      cursor: pointer;
+
+/* smartphones */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; 
+  }
+
+  .hero .content h3 {
+    font-size: 1.2rem; 
+  }
+
+  .hero .content h1 {
+    font-size: 3rem; 
+  }
+
+  .content button {
+    font-size: 0.8rem; 
+    padding: 15px 25px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh; 
+  }
+
+  .hero .content h3 {
+    font-size: 1rem; 
+  }
+
+  .hero .content h1 {
+    font-size: 2.5rem; 
+  }
+
+  .content button {
+    font-size: 0.7rem; 
+    padding: 10px 20px; 
+  }
 }
   
 
 img{
   width: 100%;
 }
- /* .program-box .icon{
-  width: 10%;
- } */
+ 
  h2 {
   color: black;
  
 }
 .content2{
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -277,20 +311,18 @@ img{
 }
 
 
-.content5{
-  /* margin-bottom: 16%;
-  gap: 10px; */
+.content5 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
-.class-list .gym{
-   display: flex;
-   flex-direction: column;
-   gap: 70px;
+
+.class-list .gym {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 .classes-container {
@@ -299,55 +331,52 @@ img{
   max-width: 1000px;
   margin: auto;
   padding: 20px;
+  flex-wrap: wrap; 
 }
+
 .class-list {
-  width: 30%;
+  width: 100%; 
   text-align: left;
-  padding-right: 20px;
+  padding-right: 0; 
 }
-.class-list .item img{
-  width: 14%;
+
+.class-list .item img {
+  width: 20%; 
 }
+
 .class-list .item {
   background: #fff;
   box-shadow: 9px 8px 6px 0px rgba(55, 55, 55, 0.4);
   padding: 12px;
   margin-bottom: 10px;
-  
   cursor: pointer;
-  
- 
 }
-.class-content .buttons .secondary{
-  background-color: orangered;
-  color: white;
-}
- 
-.class-list .item:hover {
-  background: #ececec;
-}
-.class-list .item .icon {
-  margin-right: 10px;
-  color: #c44;
-}
+
 .class-content {
-  width: 70%;
+  width: 100%; 
   text-align: left;
 }
+
 .class-content img {
-  width: 84%;
+  width: 100%; 
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 .class-content h3 {
   margin: 10px 0 5px;
 }
+
 .buttons {
   margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
+
 .buttons button {
   padding: 10px 20px;
-  margin-right: 10px;
+  margin: 5px; 
   border: none;
   border-radius: 4px;
   background-color: #c44;
@@ -355,12 +384,27 @@ img{
   cursor: pointer;
   font-weight: bold;
 }
+
 .buttons button.secondary {
-  background-color: #eee;
-  color: #c44;
+  background-color: orangered;
+  color: white;
 }
 
+/* Responsive for smartphones */
+@media (max-width: 768px) {
+  .class-list .gym {
+    gap: 30px; 
+  }
 
+  .class-list .item img {
+    width: 30%; 
+  }
+
+  .buttons button {
+    width: 100%; 
+    margin: 10px 0; 
+  }
+}
 
 .About-3{
   display: flex;
